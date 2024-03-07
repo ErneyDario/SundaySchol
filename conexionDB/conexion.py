@@ -5,8 +5,11 @@ conexion = mysql.connector.connect (
     user='root',
     password='Dev4286@',
     host='localhost',
-    port='3306'
+    port='3306',
+    database='sundayschool_db'
 )
+cursor = conexion.cursor()
 print(conexion)
+
 
 
