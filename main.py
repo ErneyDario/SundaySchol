@@ -7,15 +7,19 @@ from conexionDB.conexion import *
 #Instaciamos nuestra app
 app = FastAPI() 
 
+
 #------------------------------------------
 # creamos un nuevo registro
-#------------------------------------------
+# #------------------------------------------
+@app.post("/Staff")
+def addStaff(Identificacion: str, Nombres: str, Apellidos: str, Direccion: str, Telefono: str, FechaNacimiento: str):
+    return addPerson(Identificacion, Nombres, Apellidos, Direccion, Telefono, FechaNacimiento)
 
-@app.get("/")
-def conexionDB():
-    return probandoConexion()
-
-
+@app.get("/staff")
+def get_staff():
+    cursor.execute("SELECT * FROM staff")
+    staff = cursor.fetchall()
+    return(staff)
 
 
 

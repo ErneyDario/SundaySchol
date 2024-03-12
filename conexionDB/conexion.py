@@ -12,3 +12,5 @@ try:
     )
 except Error as ex:
     print("Error en la conexion a la DB {0}".format(ex))
+    
+cursor = conexion.cursor()
