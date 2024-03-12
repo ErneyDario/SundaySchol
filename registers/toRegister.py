@@ -1,7 +1,10 @@
 from conexionDB.conexion import *
 
-def addPerson():
-    cursor.execute("INSERT INTO staff(Identificacion, Nombres, Apellidos, Direccion, Telefono, FechaNacimiento) VALUES ('1065570490', ' Matilde lina', 'Vides Jimenez', 'Carrera 12 11 23', '3182345678','23/04/2001')")
+cursor = conexion.cursor
+
+def addPerson():    
+    cursor.execute ("""INSERT INTO staff(Identificacion, Nombres, Apellidos, Direccion, Telefono, FechaNacimiento) 
+                   VALUES (%s, %s, %s, %s, %s, %s,)""")
     conexion.commit()
     return("El Registro fue exitoso")
 
