@@ -8,18 +8,31 @@ from conexionDB.conexion import *
 app = FastAPI() 
 
 
-#------------------------------------------
-# creamos un nuevo registro
-# #------------------------------------------
-@app.post("/Staff")
-def addStaff(Identificacion: str, Nombres: str, Apellidos: str, Direccion: str, Telefono: str, FechaNacimiento: str):
-    return addPerson(Identificacion, Nombres, Apellidos, Direccion, Telefono, FechaNacimiento)
+#---------------------------------------------------------------------------------------------------
+# creamos un nuevo registro Staff y creamos el usuario
+#---------------------------------------------------------------------------------------------------
+@app.post("/SundaySchool/Staff")
+def post_addStaff(Identificacion: str, Nombres: str, Apellidos: str, Direccion: str, Telefono: str,
+                   FechaNacimiento: str, UserName: str, Password: str):
+    addPerson (Identificacion, Nombres, Apellidos, Direccion, Telefono, FechaNacimiento)
+    addUsers(Identificacion, UserName, Password)
+    return 
 
-@app.get("/staff")
-def get_staff():
-    cursor.execute("SELECT * FROM staff")
-    staff = cursor.fetchall()
-    return(staff)
+#---------------------------------------------------------------------------------------------------
+# creamos un nuevo salon
+#---------------------------------------------------------------------------------------------------
+
+@app.post("/SundaySchool/Classroom")
+def post_addClassroom(nameClass= str, ageRange = str):
+    return addClassrom(nameClass, ageRange)
+
+#---------------------------------------------------------------------------------------------------
+# creamos un nuevo rol
+#---------------------------------------------------------------------------------------------------
+
+@app.post("/SundaySchool/Rol")
+def post_addRol(nameRol = str):
+    return addRol(nameRol)
 
 
 
