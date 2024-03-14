@@ -15,11 +15,10 @@ app = FastAPI()
 def post_addStaff(Identificacion: str, Nombres: str, Apellidos: str, Direccion: str, Telefono: str,
                    FechaNacimiento: str, UserName: str, Password: str):
     addPerson (Identificacion, Nombres, Apellidos, Direccion, Telefono, FechaNacimiento)
-    addUsers(Identificacion, UserName, Password)
-    return 
+    return addUsers(Identificacion, UserName, Password)
 
 #---------------------------------------------------------------------------------------------------
-# creamos un nuevo salon
+# creamos un nuevo salon de Clases
 #---------------------------------------------------------------------------------------------------
 
 @app.post("/SundaySchool/Classroom")

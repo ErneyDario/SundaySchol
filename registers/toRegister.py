@@ -1,8 +1,6 @@
 from conexionDB.conexion import *
 from mysql.connector import Error
 
-
-
 #------------------------------------------------------------------------------------------------------------------------
 #    Funcion para agregar registros al Staff
 #------------------------------------------------------------------------------------------------------------------------
@@ -21,11 +19,10 @@ def addPerson(Identificacion =str,
         return("¡Registro Exitoso!")
     except Error as ex:
         return("Error al agregar el registro {0}".format(ex))
-
+    
 #-----------------------------------------------------------------------------------------------------------------------
 #    Funcion para crear usuarios
 #-----------------------------------------------------------------------------------------------------------------------
-    
 def addUsers(
         Identificacion =str,
         UserName = str,
@@ -39,10 +36,10 @@ def addUsers(
         return("Usuario Registrado")
     except Error as ex:
         return("Error al agregar el registro {0}".format(ex))
+    
 #-----------------------------------------------------------------------------------------------------------------------
     # Fucion Para Agregar Clases
 #-----------------------------------------------------------------------------------------------------------------------
-
 def addClassrom(
         nameClass = str, 
         ageRange = str
