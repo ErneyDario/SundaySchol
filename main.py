@@ -22,8 +22,8 @@ def post_addStaff(Identificacion: str, Nombres: str, Apellidos: str, Direccion: 
 #---------------------------------------------------------------------------------------------------
 
 @app.post("/SundaySchool/Classroom")
-def post_addClassroom(nameClass= str, ageRange = str):
-    return addClassrom(nameClass, ageRange)
+def post_addClassroom(nameClass = str, initialAge = str, finalAge = str):
+    return addClassrom(nameClass, initialAge, finalAge)
 
 #---------------------------------------------------------------------------------------------------
 # creamos un nuevo rol

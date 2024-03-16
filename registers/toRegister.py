@@ -42,10 +42,11 @@ def addUsers(
 #-----------------------------------------------------------------------------------------------------------------------
 def addClassrom(
         nameClass = str, 
-        ageRange = str
+        initialAge = str,
+        finalAge = str
         ):
     try:
-        valoresClass = (nameClass, ageRange)
+        valoresClass = (nameClass, initialAge, finalAge)
         cursor.execute ("""INSERT INTO classroom (nameClass, ageRange)
                         VALUES (%s, %s)""", valoresClass)
         conexion.commit()
