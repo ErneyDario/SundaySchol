@@ -47,8 +47,8 @@ def addClassrom(
         ):
     try:
         valoresClass = (nameClass, initialAge, finalAge)
-        cursor.execute ("""INSERT INTO classroom (nameClass, ageRange)
-                        VALUES (%s, %s)""", valoresClass)
+        cursor.execute ("""INSERT INTO classroom (nameClass, initialAge, finalAge)
+                        VALUES (%s, %s, %s)""", valoresClass)
         conexion.commit()
         return ("Clase Agregada con Exito")
     except Error as ex: 
