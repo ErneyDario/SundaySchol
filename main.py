@@ -1,8 +1,9 @@
 #Importamos librerias
 from fastapi import FastAPI
-from registers import *
-from registers.toRegister import *
+from methodsDB.toRegister import *
+from methodsDB.toDelete import *
 from conexionDB.conexion import *
+from methodsDB.consult import *
 
 #Instaciamos nuestra app
 app = FastAPI() 
@@ -33,7 +34,33 @@ def post_addClassroom(nameClass = str, initialAge = str, finalAge = str):
 def post_addRol(nameRol = str):
     return addRol(nameRol)
 
+#----------------------------------------------------------------------------------------------------
+# Consultamos la tabla staff
+# ---------------------------------------------------------------------------------------------------
+@app.get("/SundaySchool/consultar/Staff")
+def getConStaff():
+    return(conStaff())
 
+#----------------------------------------------------------------------------------------------------
+# Consultamos la tabla Rol
+# ---------------------------------------------------------------------------------------------------
+@app.get("/SundaySchool/consultar/rol")
+def getConRol():
+    return(conRol())
+
+#----------------------------------------------------------------------------------------------------
+# Consultamos la tabla classRoom    
+# ---------------------------------------------------------------------------------------------------
+@app.get("/SundaySchool/consultar/classRoom")
+def getConClassroom():
+    return(conClassroom())
+
+#----------------------------------------------------------------------------------------------------
+# Consultamos la tabla classRoom    
+# ---------------------------------------------------------------------------------------------------
+@app.get("/SundaySchool/consultar/conRegStaff")
+def getConRegStaff(Identificiacion = str):
+    return (conRegStaff(Identificiacion))
 
 
 
