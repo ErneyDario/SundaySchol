@@ -56,7 +56,7 @@ def getConClassroom():
     return(conClassroom())
 
 #----------------------------------------------------------------------------------------------------
-# Consultamos la tabla classRoom    
+# Consultamos los datos de una persona registrada
 # ---------------------------------------------------------------------------------------------------
 @app.get("/SundaySchool/consultar/conRegStaff")
 def getConRegStaff(Identificiacion = str):
